@@ -1,0 +1,38 @@
+templates:
+  _common_pod: &_common_pod
+    labels:
+      app: angular
+      technology: K8s-pod
+    kind:
+      identifier: app
+  _common_helm: &_common_helm
+    owner:
+      identifier: DevSecOps
+    source: test_data_assets
+    kind:
+      identifier: helm
+    labels:
+      app: angular
+      technology: helm
+
+request:
+  method: PUT
+  path: /sources/test_data_assets/assets
+
+data:
+  owner:
+    identifier: DSI
+  assets:
+    - identifier: angular-develop-develop
+      version: 0.0.1
+      <<: *_common_pod
+    - identifier: angular-develop-groot
+      version: 0.0.1
+      <<: *_common_pod
+    - identifier: angular-preprod-preprod
+      version: 0.0.1
+      <<: *_common_pod
+    - identifier: helm-angular
+      version: 0.0.1
+      <<: *_common_helm
+

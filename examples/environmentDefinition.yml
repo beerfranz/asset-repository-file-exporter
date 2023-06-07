@@ -1,0 +1,19 @@
+request:
+  method: POST
+  path: /environment_definitions
+
+data:
+  identifier: application
+  name: Application
+  attributes:
+    develop:
+      - develop
+      - avalon-us
+      - groot
+    preprod:
+      - preprod
+      - preprod-azure
+    prod:
+      - prod
+      - us1
+      - azure-fr1

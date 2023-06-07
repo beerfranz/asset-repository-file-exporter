@@ -1,0 +1,23 @@
+
+request:
+  method: PUT
+  path: /sources/test_data_instances/instances
+
+data:
+  instances:
+    - identifier: angular-develop-develop
+      version: 0.0.2
+      asset:
+        identifier: angular-develop-develop
+    - identifier: angular-develop-groot
+      asset:
+        identifier: angular-develop-groot
+      version: 0.0.1
+    - identifier: angular-preprod-preprod
+      asset:
+        identifier: angular-preprod-preprod
+      version: 0.0.1
+    - identifier: helm-angular
+      asset:
+        identifier: helm-angular
+      version: 0.0.1
