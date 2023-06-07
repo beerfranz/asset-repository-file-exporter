@@ -2,7 +2,7 @@ name: Create and publish a Docker image
 
 on:
   release: 
-    types: [published, prereleased]
+    types: [published]
   push:
     branches: [main]
   pull_request:
