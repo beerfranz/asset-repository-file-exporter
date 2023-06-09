@@ -1,11 +1,18 @@
 #!/usr/bin/env sh
 
-for yaml in $(find . -type f -name *.yml); do
+
+REQUESTS_DIR=/app/requests
+TMP_DIR=/tmp/requests
+
+mkdir -p ${TMP_DIR}
+
+for yaml in $(find ${REQUESTS_DIR} -type f -name *.yml); do
 	echo "convert ${yaml} to json"
-	yq . ${yaml} > ${yaml}.json
+	file=$(basename ${yaml})
+	yq . ${yaml} > ${TMP_DIR}/${file}.json
 done
 
-for json in $(find . -type f -name *.json); do
+for json in $(find ${TMP_DIR} -type f -name *.json); do
 	echo "find file ${json}"
 	data_file=/tmp/data.json
 
@@ -28,6 +35,6 @@ for json in $(find . -type f -name *.json); do
 
 done
 
-for tmp in $(find . -type f -name *.yml.json); do
+for tmp in $(find ${TMP_DIR} -type f -name *.json); do
 	rm ${tmp}
 done

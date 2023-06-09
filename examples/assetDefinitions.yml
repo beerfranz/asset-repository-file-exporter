@@ -1,27 +1,30 @@
 request:
   method: PUT
   path: /batch_asset_definitions
+  path: /sources/test_data_assetDefinitions/asset_definitions
 
 data:
-  owner: DSI
+  owner: 
+    identifier: DSI
   source: test_data_assetDefinitions
   assetDefinitions:
   - identifier: angular
     name: Angular
-    labels:
-      kind: app
+    kind:
+      identifier: app
     environmentDefinition: application
   - identifier: angular-helm
     relations:
       - identifier: angular
         relation: package
-    labels:
-      kind: helm
-    owner: DevSecOps
+    kind:
+      identifier: helm
+    owner: 
+      identifier: DevSecOps
   - identifier: kubernetes
     name: Kubernetes
-    labels:
-      kind: orchestrator
+    kind:
+      identifier: orchestrator
     owner: DevSecOps
     environmentDefinition: kubernetes
     relations:
